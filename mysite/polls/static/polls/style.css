@@ -6,3 +6,13 @@ body {
     background: white url("images/background.jpg") no-repeat;
     background-size:cover;
 }
+h1{
+	
+	color:red;
+}
+
+#button{
+	background-color:blue;
+	size: 50px;
+
+}
