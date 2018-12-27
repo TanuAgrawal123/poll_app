@@ -1,12 +1,57 @@
 {% load static %}
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</head>
+<body>
 <h1>POLL APP!!</h1>
 <h2>Start Voting...</h2>
-{% if latest_question_list %}
-<ul>
-{% for question in latest_question_list %}
-<h2><i><li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li></i></h2>
+<div class="card card-fluid bg-dark shadow text-white col-12">
+<div class="card-body">
+{% if questions %}
+	{% for question in questions %}
+	    
+	    	<h2 class="text-center">{{question.question_text}}</h2>
+	    	<form action="{% url 'polls:vote' question.id %}" method="post">
+	    		{% csrf_token %}
+	    	<div class="card-deck">
+	    		
+	{% for choice in question.choice_set.all %}
+
+	<div class="card shadow  bg-danger col-6 h-50 p-5 m-5 text-center ">
+	<h2><input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+   <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label></h2><br></div>
 {% endfor %}
+</div>
+<input type="submit" Value ="Result" class="btn btn-primary btn-block">
+
+</form>
+	{% endfor %}
+</div>
+<div class="card-footer">
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if questions.has_previous %}
+	            <a class="btn btn-outline-primary" href="?page={{ questions.previous_page_number }}">previous</a>
+	        {% endif %}
+
+	        {% if questions.has_next %}
+	            <a class="btn btn-outline-primary" href="?page={{ questions.next_page_number }}">next</a>
+	        {% endif %}
+	    </span>
+	</div>
 {% else %}
-<p>No polls are available.</p>
+	<p>No polls are available.</p>
+
 {% endif %}
+</div>
+</div>
+	
+</html>
