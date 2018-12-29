@@ -3,16 +3,24 @@ li a
 	color:green;
 }
 body {
-    background: white url("images/background.jpg") no-repeat;
-    background-size:cover;
+   background: white url("images/background.jpeg") repeat;
+   
 }
 h1{
 	
 	color:red;
 }
 
-#button{
+button{
 	background-color:blue;
 	size: 50px;
+float:right;
+}
 
+#cards{
+	
+	background: white url("images/background.jpeg") repeat;
+}
+#cardelement{
+	height:250;
 }

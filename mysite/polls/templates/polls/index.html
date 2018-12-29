@@ -3,9 +3,12 @@
  
 
 {% block content %}
-<h1>POLL APP!!</h1>
-<h2>Start Voting...</h2>
-<div class="card card-fluid bg-dark shadow text-white col-12">
+
+<h3 class="text-center text-white">Start Voting...</h3>
+<div class="navbar navbar-expand-md shadow">
+	<button class=" btn btn-outline-info">SignOut</button>
+	</div>
+<div class="card shadow text-white col-12 border-white" id="cards">
 <div class="card-body">
 {% if questions %}
 	{% for question in questions %}
@@ -13,21 +16,21 @@
 	    	<h2 class="text-center">{{question.question_text}}</h2>
 	    	<form action="{% url 'polls:vote' question.id %}" method="post">
 	    		{% csrf_token %}
-	    	<div class="card-deck">
+	    	<div class="card-deck shadow">
 	    		
 	{% for choice in question.choice_set.all %}
 
-	<div class="card shadow  bg-danger col-6 h-50 p-5 m-5 text-center ">
+	<div class="card border-dark shadow-lg bg-danger col-6 p-5 m-3 text-center" id="cardelement">
 	<h2><input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label></h2><br></div>
 {% endfor %}
 </div>
-<input type="submit" Value ="Result" class="btn btn-primary btn-block">
+<input type="submit" Value ="RESULT" class="btn btn-primary btn-block my-2">
 
 </form>
 	{% endfor %}
 </div>
-<div class="card-footer">
+<div class="card-footer bg-dark">
 	<div class="pagination">
 	    <span class="step-links">
 	        {% if questions.has_previous %}
