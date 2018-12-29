@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 
 
 
-def index(request):
+def index(request, ):
     latest_question_list = Question.objects.order_by('-pub_date')
     paginator = Paginator(latest_question_list, 1)
     page = request.GET.get('page')

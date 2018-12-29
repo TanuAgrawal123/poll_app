@@ -1,16 +1,8 @@
-{% load static %}
-<html>
-<head>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+{% extends "polls/base.html" %}
+ 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-</head>
-<body>
+{% block content %}
 <h1>POLL APP!!</h1>
 <h2>Start Voting...</h2>
 <div class="card card-fluid bg-dark shadow text-white col-12">
@@ -53,5 +45,4 @@
 {% endif %}
 </div>
 </div>
-	
-</html>
+{% endblock content %}

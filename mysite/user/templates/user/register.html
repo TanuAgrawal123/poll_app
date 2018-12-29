@@ -1,0 +1,24 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<div class="container border">
+<div class="content-section">
+	<form method="POST">
+		{% csrf_token %}
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4">join today</legend>
+			{{ form.as_p }}
+		</fieldset>
+
+		<div class="form-group">
+			<button class=" btn btn-outline-info" type="submit">sign-up</button>
+		</div>
+
+	</form>
+	<div class="border-top pt-3">
+		<small class="text-muted">
+			Already have an Account?<a class="ml-2" href="#">Sign In</a>
+		</small>
+	</div>
+</div>
+</div>
+{% endblock content %}
