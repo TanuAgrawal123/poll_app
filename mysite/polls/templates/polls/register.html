@@ -1,12 +1,14 @@
 {% extends "polls/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="container border">
-<div class="content-section">
+<h3 class="text-center my-5 text-white">Register yourself by filling this form</h3>
+<div class="container border bg-white shadow ">
+<div class="content-section shadow">
 	<form method="POST">
 		{% csrf_token %}
 		<fieldset class="form-group">
 			<legend class="border-bottom mb-4">join today</legend>
-			{{ form.as_p }}
+			{{ form|crispy }}
 		</fieldset>
 
 		<div class="form-group">
