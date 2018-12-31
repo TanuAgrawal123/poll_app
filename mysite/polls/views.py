@@ -9,6 +9,10 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from .forms import UserRegisterForm
 
+def home(request):
+    return render(request,'polls/home.html')
+
+
 
 def index(request, *args):
     latest_question_list = Question.objects.order_by('-pub_date')
@@ -36,6 +40,7 @@ def vote(request,question_id):
 	else:
 		selected_choice.votes += 1
 		selected_choice.save()
+		
 		return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 

@@ -3,8 +3,7 @@ li a
 	color:green;
 }
 body {
-   background: white url("images/background.jpeg") repeat;
-   
+ background: white url("images/background.jpeg") repeat;  
 }
 h1{
 	
@@ -18,13 +17,44 @@ float:right;
 }
 
 #cards{
-	
-	background: white url("images/background.jpeg") repeat;
-}
-#cardelement{
-	height:250;
+	 background: white url("images/background.jpeg") repeat;
+	box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
+} 
 
+#cardelement{
+	height:300;
+	
+box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
 }
 #results{
-	margin-top:120px;
+	margin-top:10px;
+	height:400px;
+	width:600px;
+
+}
+#heading{
+	padding-top:50;
+}
+.image{
+	height:120;
+	width:300px;
+	margin-left: 100px;
+box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
+}
+#image_block{
+	width:1000;
+
+	margin-left:250px;
+	border: 1px solid blue;
+	margin-top:50;
+	box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
+
+}
+.site_header{
+	height: 170px;
+	background: white url("images/background.jpeg") repeat;
+   
+}
+#buttons{
+	float:right;
 }

@@ -1,16 +1,25 @@
 {% extends "polls/base.html" %}
+{% load static %}
 {% block content %}
-<div class=" container" id="results">
+<h2 class="text-center text-white m-5">Great Vote</h2>
+<div class="card lg-shadow bg-primary mx-auto" id="results">
+	
+	<div class="card-body align-center">
 <h1>{{ question.question_text }}</h1>
 <ul>
 
 	{% for choice in question.choice_set.all %}
 	<h3 class="text-white"><li>{{choice.choice_text}} -- {{ choice.votes }}vote{{ choice.votes|pluralize }}</li></h3>
 	{% endfor %}
+
 </ul>
-<h2><a href="{% url 'polls:polls-index' %}">Vote Again?</a></h2>
+
+<div class="image"><img src="{% static 'polls/images/result.jpg' %}" class="card-img"></div>
+</div>
+<div class="footer">
+<h2 class="mb-3 ml-5"><a href="{% url 'polls:polls-index' %}" class="text-dark">Vote Again?</a></h2>
 
 {% endblock content %}
+</div></div>
 </div>
-
 
