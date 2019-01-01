@@ -17,10 +17,27 @@
 		<div class="text-center mt-1"><b><i><h1 class="text-danger" id="heading">Would You Rather???</h1></i></b>
 
 	</div>
-</div></div>
+</div>
 
-
-	
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+	<div class="container">
+		<a class="navbar brand mr-4" href="{%url 'polls:polls-home' %}"><strong>POLL APP</strong></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarToggle">
+			<div class="navbar-nav mr-auto">
+				<a class=" nav-item nav-link" href="{% url 'polls:polls-home' %}"><strong>HOME</strong></a>
+			</div>
+			<div class="navbar-nav">
+				{% if user.is_authenticated %}
+	<a class="nav-item nav-link" href="{% url 'polls:logout' %}"><strong>LOGOUT</strong></a>
+					
+				{% else %}
+				<a class="nav-item nav-link" href="{% url 'polls:login' %}"><strong>LOGIN</strong></a>
+				<a class="nav-item nav-link" href="{% url 'polls:register' %}"><strong>ReEGISTER</strong></a>
+				{% endif %}
+	</div></div></div></nav>
 		{% if messages %}
 		  {% for message in messages %}
 		   <div class="alert alert-{{message.tags}}">

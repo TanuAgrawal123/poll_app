@@ -1,0 +1,15 @@
+{% extends "polls/base.html" %}
+
+{% load static %}
+{% block content %}
+<main id="bodyback">
+	<div class="border-top pt-3">
+		<small class="text-muted">
+		<a href="{% url 'polls:login' %}"><strong><h3>Log In Again</h3></strong></a>	
+		</small>
+	</div>
+	<h4 class="text-center text-white">WANTS TO VOTE AGAIN THEN LOGIN IN</h4>
+	<h5 class="text-center text-white">THANKS TO VOTE</h5>
+	<img src="{% static 'polls/images/vote.jpg' %}">
+</main>
+{% endblock content %}

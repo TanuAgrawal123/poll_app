@@ -2,12 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="navbar navbar-expand-md navbar-dark bg-info">
-	<div class="navbar-nav text-right">
-	<a href="{% url 'polls:register' %}" class="btn btn-outline-primary btn-secondary" type="button">SignUP</a>
-</div>
-<a href="{% url 'polls:login' %}" class="btn btn-outline-primary ml-auto" type="button" id="buttons">Login</a>
-</div>
+
 <img src="{% static 'polls/images/img.png' %}" class="center-block" id="image_block">
 <h3 class="text-center text-white">Do you Love Voting then start voting </h3>
 {% endblock content %}
