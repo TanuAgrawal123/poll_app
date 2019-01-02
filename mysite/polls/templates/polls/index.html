@@ -8,6 +8,7 @@
 
 <div class="card shadow text-white col-12 border-white" id="cards">
 <div class="card-body">
+	
 {% if questions %}
 	{% for question in questions %}
 	    
@@ -40,11 +41,12 @@
 	        {% endif %}
 	    </span>
 	</div>
+	
+</div>
 {% else %}
 <h1>NO polls are not available</h1>
 
 {% endif %}
-
 </div>
 </div>
 {% endblock content %}

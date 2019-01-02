@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
-    'crispy_forms'
+    'crispy_forms',
+    'social_django',
 
+]
+AUTHENTICATION_BACKENDS=[
+'social_core.backends.google.GoogleOAuth2',
+'django.contrib.auth.backends.ModelBackend',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -65,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -122,4 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK='bootstrap4'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='427320644087-plp8oucsdu9oflm408hcrl76c6n173ro.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET='fb0ZaKp8sIBL-SqPUihKRfMx'
 LOGIN_REDIRECT_URL='polls:polls-index'

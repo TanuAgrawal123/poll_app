@@ -8,6 +8,8 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.models import User
+
 
 def home(request):
     return render(request,'polls/home.html')
@@ -20,7 +22,7 @@ def index(request, *args):
     page = request.GET.get('page')
     questions = paginator.get_page(page)
     return render(request, 'polls/index.html',{'questions': questions})
-		 
+    
 
 
 
@@ -55,5 +57,4 @@ def register(request):
 	else:
 		form=UserRegisterForm()
 	return render(request, 'polls/register.html', {'form':form})
-
 

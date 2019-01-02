@@ -13,13 +13,13 @@
 <body>
 	
 	<div class="site_header">
-		<div><img src="{% static 'polls/images/logo.png' %}" class="float-left rounded"></div>
+		<div><img src="{% static 'polls/images/logo.png' %}" class="float-left rounded" id="imlogo"></div>
 		<div class="text-center mt-1"><b><i><h1 class="text-danger" id="heading">Would You Rather???</h1></i></b>
 
 	</div>
 </div>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
 	<div class="container">
 		<a class="navbar brand mr-4" href="{%url 'polls:polls-home' %}"><strong>POLL APP</strong></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
@@ -31,11 +31,12 @@
 			</div>
 			<div class="navbar-nav">
 				{% if user.is_authenticated %}
-	<a class="nav-item nav-link" href="{% url 'polls:logout' %}"><strong>LOGOUT</strong></a>
+	<a href="{% url 'polls:logout' %}"><button type="button" class="btn btn-success"><strong>LOGOUT</strong></button></a>
 					
 				{% else %}
-				<a class="nav-item nav-link" href="{% url 'polls:login' %}"><strong>LOGIN</strong></a>
-				<a class="nav-item nav-link" href="{% url 'polls:register' %}"><strong>ReEGISTER</strong></a>
+				<a href="{% url 'social:begin' 'google-oauth2' %}"><button type="button" class="btn btn-danger m-1">Google+</button></a>
+				<a  href="{% url 'polls:login' %}"><button type="button" class="btn btn-primary m-1"><strong>LOGIN</strong></button></a>
+				<a href="{% url 'polls:register' %}"><button type="button" class="btn btn-warning m-1"><strong>ReEGISTER</strong></button></a>
 				{% endif %}
 	</div></div></div></nav>
 		{% if messages %}

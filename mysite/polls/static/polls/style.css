@@ -33,7 +33,7 @@ box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
 
 }
 #heading{
-	padding-top:50;
+	padding-top:100;
 }
 .image{
 	height:120;
@@ -51,14 +51,13 @@ box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
 
 }
 .site_header{
-	height: 170px;
+	height: 220px;
 	background: white url("images/background.jpeg") repeat;
    
 }
 #buttons{
 	float:right;
 }
-#vote{
-	margin:300px;
-	
+#imlogo{
+margin-top: 50px;	
 	}
