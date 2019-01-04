@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+from secrets import *
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -132,6 +132,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK='bootstrap4'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='427320644087-plp8oucsdu9oflm408hcrl76c6n173ro.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET='fb0ZaKp8sIBL-SqPUihKRfMx'
+
 LOGIN_REDIRECT_URL='polls:polls-index'
