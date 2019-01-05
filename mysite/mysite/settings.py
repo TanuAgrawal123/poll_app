@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-from secrets import *
-import os
 
+import os
+from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -131,6 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK='bootstrap4'
-
-
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 LOGIN_REDIRECT_URL='polls:polls-index'
